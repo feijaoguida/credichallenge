@@ -1,16 +1,24 @@
 {
-    "data": [{
-            "id": "",
-            "cnpj": "",
-            "fantasyName": "",
-            "name": "",
+    "data": [
+        {
+            "id": "1",
+            "cnpj": "87106194000192",
+            "fantasyName": "Empresa 1",
+            "name": "Empresa 1 S.A.",
             "selected": false
         },
         {
-            "id": "",
-            "cnpj": "",
-            "fantasyName": "",
-            "name": "",
+            "id": "2",
+            "cnpj": "75721515000180",
+            "fantasyName": "Empresa 2",
+            "name": "Empresa 2 Ltda.",
+            "selected": false
+        },
+        {
+            "id": "3",
+            "cnpj": "93855284000189",
+            "fantasyName": "Empresa 3",
+            "name": "Empresa 3 Eireli",
             "selected": true
         }
     ]
