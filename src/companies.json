@@ -1,0 +1,17 @@
+{
+    "data": [{
+            "id": "",
+            "cnpj": "",
+            "fantasyName": "",
+            "name": "",
+            "selected": false
+        },
+        {
+            "id": "",
+            "cnpj": "",
+            "fantasyName": "",
+            "name": "",
+            "selected": true
+        }
+    ]
+}
