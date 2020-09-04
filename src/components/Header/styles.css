@@ -1,0 +1,14 @@
+.header,
+.menu {
+  background-color: #01929f;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+
+  /* identical to box height */
+  color: #ffffff;
+}
+
+.menu {
+  align-content: flex-end;
+}
