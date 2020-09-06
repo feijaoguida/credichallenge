@@ -9,17 +9,28 @@ import HeaderAnt from "../../components/Header";
 import FooterAnt from "../../components/Footer";
 
 import * as users from "../../users.json";
-import * as companies from "../../companies.json";
+//import * as companies from "../../companies.json";
 
-interface usersRepository {
-  id: number;
-  cpf: string;
-  email: string;
+/*
+interface companiesInterface {
+  id: string;
+  cnpj: string;
+  fantasyName: string;
   name: string;
-  salary: number;
-  companyId: number;
-  value: number;
+  selected: boolean;
 }
+
+let idCompany = companies.data.filter(t=>t.selected ===true)
+
+const userFilter = users.data.map((user) => {
+  if (user.companyId === idCompany.id) {
+    return {
+      ...user,
+    };
+  }
+  return user;
+});
+*/
 
 const { Content } = Layout;
 
@@ -50,31 +61,13 @@ const columns = [
 function Home() {
   const [selectedRowId, setSelectedRowId] = useState<any[]>([]);
 
-  function selectRow(record: { id: string }) {
-    const selectedRowIdSelect: any = [...selectedRowId];
-
-    if (selectedRowIdSelect.indexOf(record.id) >= 0) {
-      selectedRowIdSelect.splice(selectedRowIdSelect.indexOf(record.id), 1);
-    } else {
-      selectedRowIdSelect.push(record.id);
-    }
-    setSelectedRowId(selectedRowIdSelect);
-    console.log(selectedRowId);
-    console.log(selectedRowIdSelect);
-    console.log(record.id);
-    console.log(record);
-  }
-  const onSelectedRowIdChange = (
-    selectedRowIdSelect: React.SetStateAction<any[]>
-  ) => {
-    setSelectedRowId(selectedRowIdSelect);
+  const onSelectChange = (selectedRowId: React.SetStateAction<any[]>) => {
+    setSelectedRowId(selectedRowId);
   };
 
-  //const { selectedRowId } = this.state;
-  const selectedRowIdSelect: any = selectedRowId;
   const rowSelection = {
-    selectedRowIdSelect,
-    onChange: onSelectedRowIdChange,
+    selectedRowId,
+    onChange: onSelectChange,
   };
 
   return (
@@ -88,11 +81,6 @@ function Home() {
               rowSelection={rowSelection}
               columns={columns}
               dataSource={users.data}
-              onRow={(record) => ({
-                onClick: () => {
-                  selectRow(record);
-                },
-              })}
             />
           </div>
         </div>
